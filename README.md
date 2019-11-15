@@ -1,4 +1,4 @@
-# what-s-it-called
+# what's-it-called
 predict car names
 
 setup and run flask app:
