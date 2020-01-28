@@ -11,7 +11,7 @@ Pillow==6.2.1
 pkg-resources==0.0.0
 requests==2.22.0
 tensorboard==2.0.1
-tensorflow==2.0.0
+tensorflow==2.0.1
 tensorflow-estimator==2.0.1
 python==3.7.5
 
