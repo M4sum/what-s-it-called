@@ -6,10 +6,10 @@ import tensorflow as tf
 from tensorflow import keras
 import os
 
-app.config["UPLOAD_FOLDER"] = os.environ['UPLOAD_FOLDER']
+UPLOAD_FOLDER = "app/uploads"
 
-app.config["NEURAL_NET_MODEL_PATH"] = os.environ['NEURAL_NET_MODEL_PATH']
-NEURAL_NET = tf.keras.models.load_model(app.config["NEURAL_NET_MODEL_PATH"])
+NEURAL_NET_MODEL_PATH = "app/model/model_weights.h5"
+NEURAL_NET = tf.keras.models.load_model(NEURAL_NET_MODEL_PATH)
 
 brands = {0:'Honda', 1:'Hyundai', 2:'Lexus', 3:'Toyota', 4:'Volkswagon'}
 img_x=img_y=70
@@ -24,7 +24,7 @@ def upload_image():
                 passed = False
             try:
                 filename = image_file.filename
-                filepath = os.path.join(app.config["UPLOAD_FOLDER"], filename)
+                filepath = os.path.join(UPLOAD_FOLDER, filename)
                 image_file.save(filepath)
                 passed = True
 
