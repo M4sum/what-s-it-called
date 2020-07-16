@@ -8,8 +8,8 @@ import os
 
 app.config["UPLOAD_FOLDER"] = os.environ['UPLOAD_FOLDER']
 
-NEURAL_NET_MODEL_PATH = os.environ['NEURAL_NET_MODEL_PATH']
-NEURAL_NET = tf.keras.models.load_model(NEURAL_NET_MODEL_PATH)
+app.config["NEURAL_NET_MODEL_PATH"] = os.environ['NEURAL_NET_MODEL_PATH']
+NEURAL_NET = tf.keras.models.load_model(app.config["NEURAL_NET_MODEL_PATH"])
 
 brands = {0:'Honda', 1:'Hyundai', 2:'Lexus', 3:'Toyota', 4:'Volkswagon'}
 img_x=img_y=70
@@ -30,6 +30,7 @@ def upload_image():
 
             except Exception:
                 passed = False
+                print(passed)
             if passed:
                 return redirect(url_for('predict', filename=filename))
     return render_template("upload_image.html")
