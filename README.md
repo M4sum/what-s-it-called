@@ -1,5 +1,9 @@
 # what's-it-called
-predict car names
+
+This app predicts the car name from a logo. Currently only predicts a logo of 5 companies namely, Toyota, Honda, Volkswagen, Hyundai and Lexus.
+
+You need to upload only the cropped logo part for this to work.
+
 Deployed on:
 https://whats-it-called.herokuapp.com/
 
