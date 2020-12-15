@@ -39,9 +39,10 @@ def upload_image():
     return render_template("upload_image.html")
 
 def load_and_prepare(filepath):
-
-    image = np.array(Image.open(filepath).convert('RGB')).flatten()
-    image = image.astype(float) / 255
+    im = Image.open(filepath).convert('RGB')
+    image = im.resize((img_x, img_y))
+    image = np.array(image).flatten()
+    # image = image.astype(float) / 255
     image = image.reshape(-1,70,70,3)
     return image
 
